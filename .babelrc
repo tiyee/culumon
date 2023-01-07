@@ -1,0 +1,30 @@
+{
+  // "presets": ["@babel/preset-env", "@babel/react"],
+  "env": {
+    "production": {
+      "plugins": ["@emotion"]
+    }
+  },
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": "last 1 version"
+      }
+    ],
+    "@babel/react"
+  ],
+  "plugins": [
+    [
+      "@emotion",
+      {
+        // sourceMap is on by default but source maps are dead code eliminated in production
+        "sourceMap": false,
+        "autoLabel": "dev-only",
+        "labelFormat": "[local]",
+        "cssPropOptimization": true
+      }
+    ]
+  ],
+  "comments": false
+}
